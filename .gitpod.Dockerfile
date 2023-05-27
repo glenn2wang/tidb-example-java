@@ -6,7 +6,7 @@ RUN sudo apt-get update && \
     sudo rm -rf /var/lib/apt/lists/* && \
     sudo mkdir -p /var/run/sshd
 # 设置密码
-RUN echo 'root:test' | chpasswd
+RUN echo 'root:test' | sudo chpasswd
 # 启用 supervisor 的 SSH 服务
 RUN echo 'supervisorctl start sshd' >> /etc/supervisor/conf.d/supervisord.conf
 # 暴露 SSH 端口
