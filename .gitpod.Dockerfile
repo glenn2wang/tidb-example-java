@@ -8,7 +8,7 @@ RUN sudo apt-get update && \
 # 设置密码
 RUN echo 'root:test' | sudo chpasswd
 # 启用 supervisor 的 SSH 服务
-RUN sudo mkdir /etc/supervisor/conf.d/
+RUN sudo mkdir -p /etc/supervisor/conf.d/
 RUN sudo echo 'supervisorctl start sshd' >> /etc/supervisor/conf.d/supervisord.conf
 # 暴露 SSH 端口
 EXPOSE 22
