@@ -8,7 +8,7 @@ RUN sudo apt-get update && \
 # 设置密码
 RUN echo 'root:test' | sudo chpasswd
 # 启用 supervisor 的 SSH 服务
-RUN echo 'supervisorctl start sshd' >> /etc/supervisor/conf.d/supervisord.conf
+RUN echo 'sudo supervisorctl start sshd' >> /etc/supervisor/conf.d/supervisord.conf
 # 暴露 SSH 端口
 EXPOSE 22
 #RUN sudo apt install mysql-client -y
